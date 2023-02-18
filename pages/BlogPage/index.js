@@ -53,7 +53,7 @@ export default function BlogPage() {
 						null
 					)}
 					{AllBlogs.isLoading ? (
-						<div className='mx-auto text-center my-20 flex items-center justify-center  !h-full !w-full !bg-[url("/images/addblog5.png")] invert '><GridLoader /></div>
+						<div className='mx-auto text-center my-20 flex items-center justify-center  !h-full !w-full  invert '><GridLoader /></div>
 					) : (
 						null
 					)}
