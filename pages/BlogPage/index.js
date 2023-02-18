@@ -34,7 +34,7 @@ export default function BlogPage() {
 	}
 	
 	return (
-		<div className={`bg-[url('/images/addblog5.png')] ${invert} w-full pt-32 ${((user || authtoken || AllBlogs?.data?.length!==0 || Blogs.length!==0) && !AllBlogs.isLoading && !AllBlogs.isError) ? "h-full" : "h-screen"} h-screen z-[100] `}>
+		<div className={`bg-[url('/images/addblog5.png')] ${invert} w-full pt-32 ${((user || authtoken || AllBlogs?.data?.results?.length!==0) && !AllBlogs.isLoading && !AllBlogs.isError) ? "h-full" : "h-screen"} h-full z-[100] `}>
 
 			<div className=" pb-20 mx-auto">
 				{(user && authtoken) ? (
