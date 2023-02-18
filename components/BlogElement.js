@@ -39,10 +39,10 @@ export default function BlogElement({ blog }) {
 	return (
 		<div className={``}>
 
-			<div className="flex-container w-fit">
+			<div className="flex-container  overflow-hidden mx-0">
 				
 					<div className=''>
-						<Tilt className="box   max-w-full  !bg-gradient-to-br from-gray-50 to-gray-300 hover:from-gray-300 hover:to-gray-50 transition-all fade-in-out mx-10 " options={options} >
+						<Tilt className="box   w-[300px]  !bg-gradient-to-br from-gray-50 to-gray-300 hover:from-gray-300 hover:to-gray-50 transition-all fade-in-out mx-10 " options={options} >
 
 						<Link href={`/BlogPage/${blog.id}`} scroll={true}>
 							<div className="flex-item text-center text-black font-bold text-xl !p-0" >
