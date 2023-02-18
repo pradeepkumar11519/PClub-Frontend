@@ -34,7 +34,7 @@ export default function BlogPage() {
 	}
 	
 	return (
-		<div className={`bg-[url('/images/addblog5.png')] ${invert} w-full pt-32 ${((user || authtoken || AllBlogs?.data?.results?.length!==0) && (!AllBlogs.isLoading && !AllBlogs.isError) )? "h-full" : "h-screen"} h-full z-[100] `}>
+		<div className={`bg-[url('/images/addblog5.png')] ${invert} w-full pt-32 ${((user || authtoken || AllBlogs?.data?.results?.length!==0) && (!AllBlogs.isLoading && !AllBlogs.isError) )? "h-full" : "h-screen"}  h-full z-[100] `}>
 
 			<div className=" pb-20 mx-auto">
 				{(user && authtoken) ? (
@@ -53,7 +53,7 @@ export default function BlogPage() {
 						null
 					)}
 					{AllBlogs.isLoading ? (
-						<div className='mx-auto text-center my-20 flex items-center justify-center invert'><GridLoader /></div>
+						<div className='mx-auto text-center my-20 flex items-center justify-center  !h-full !w-full !bg-[url("/images/addblog5.png")] invert '><GridLoader /></div>
 					) : (
 						null
 					)}

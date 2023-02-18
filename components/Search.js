@@ -16,12 +16,14 @@ export default function Search({className1,className2,className3,className4,inpu
                     <input type="text" className={inputClass} onChange={(e)=>{
                         setsearchquery(e.target.value)
                     }} />
-                    <button className={className3}><FaSearch className={className4} onClick={(e)=>{
-            
+                    <button disabled={searchquery!==null?false:true} className={className3}><FaSearch  className={className4} onClick={(e)=>{
+            if(searchquery!==null){
                 router.push(`/BlogPage/Search/${searchquery}`)
             const queryClient = new QueryClient()
             queryClient.invalidateQueries(['SearchedBlogs'])
             openoffcanvas()
+            }
+                
             
             
             
