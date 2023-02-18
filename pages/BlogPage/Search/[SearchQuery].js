@@ -15,7 +15,7 @@ export default function SearchPage() {
     const { user, authtoken,invert } = useContext(Context)
     return (
         <div>
-            <div className={`bg-[url('/images/addblog5.png')] w-full ${invert} ${(user || authtoken)?"h-full":""} ${(!user || !authtoken) && (SearchecdBlogs.isLoading || SearchecdBlogs.isError)?"h-screen":""} ${(!user || !authtoken) && SearchecdBlogs?.data?.length===0?"h-screen":"h-full"} h-screen z-[100] pt-32`}>
+            <div className={`bg-[url('/images/addblog5.png')] w-full ${invert} ${(user || authtoken)?"h-full":""} ${(!user || !authtoken) && (SearchecdBlogs.isLoading || SearchecdBlogs.isError)?"h-screen":""} ${(!user || !authtoken) && SearchecdBlogs?.data?.length===0?"h-screen":"h-full"} ${SearchecdBlogs?.data?.length===0?"h-screen":""}  z-[100] pt-32`}>
 
                 <div className=" pt-20">
                 {!SearchecdBlogs.isLoading || !SearchecdBlogs.isFetching || SearchecdBlogs?.data?.length == 0?(
