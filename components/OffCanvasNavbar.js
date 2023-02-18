@@ -27,7 +27,7 @@ export default function OffCanvasNavbar() {
     
     return (
         <div className={` overflow-hidden`}>
-            <div id="offcanvas" className='absolute left-[-500px] bg-black h-[500px] w-[300px] overflow-hidden transition-all fade-in-out z-[10000000000000] !pb-10' data-offcanvas>
+            <div id="offcanvas" className='absolute left-[-500px] bg-black h-[550px] w-[300px] overflow-hidden transition-all fade-in-out z-[10000000000000] !pb-10' data-offcanvas>
 
             <button
 					className="mb-5"
@@ -57,7 +57,7 @@ export default function OffCanvasNavbar() {
                     
                     <Link className='' href="/BlogPage"><li className='my-2 mx-auto border-2 hover:invert transition-all fade-in-out focus:invert p-2 rounded-md text-center w-[200px] bg-black text-white'>Blog</li></Link>
                     <Link className='' href="/AboutPage"><li className='my-2 mx-auto border-2 hover:invert transition-all fade-in-out focus:invert p-2 rounded-md text-center w-[200px] bg-black text-white'>About Us</li></Link>
-                    <li className='my-2 mx-auto border-2 hover:invert transition-all fade-in-out focus:invert p-2 rounded-md text-center w-[200px] bg-black text-white' onClick={()=>{
+                    <li className='my-2 mx-auto border-2 hover:invert transition-all fade-in-out focus:invert p-2 rounded-md text-center w-[200px] bg-black text-white ' onClick={()=>{
                         if(invert==null){
                             setinvert("invert")
                         }
