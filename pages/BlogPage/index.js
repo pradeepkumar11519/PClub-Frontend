@@ -48,7 +48,7 @@ export default function BlogPage() {
 
 
 				<div id="blogpage" className='bg-[rgb(31 32 41 / var(--tw-bg-opacity))] pt-32 flex justify-center'>
-					{(AllBlogs?.data?.results?.length === 0 && Blogs.length===0 && !AllBlogs.isError && !AllBlogs.isLoading) ? (
+					{(AllBlogs?.data?.results?.length === 0 && (!AllBlogs.isError || !AllBlogs.isLoading)) ? (
 						<h1 className='text-center text-white text-3xl font-bold z-[1000]'>No Blogs Available Currently</h1>
 					) : (
 						null
