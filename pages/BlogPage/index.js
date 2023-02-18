@@ -32,6 +32,9 @@ export default function BlogPage() {
 
 		})
 	}
+	if(AllBlogs.isLoading && !AllBlogs.isError){
+		
+	}
 	return (
 		<div className={`bg-[url('/images/addblog5.png')] ${invert} w-full pt-32 ${((user || authtoken || AllBlogs?.data?.length!==0 || Blogs.length!==0) && !AllBlogs.isLoading && !AllBlogs.isError) ? "h-full" : "h-screen"} h-screen z-[100] `}>
 
@@ -45,8 +48,8 @@ export default function BlogPage() {
 
 
 				<div id="blogpage" className='bg-[rgb(31 32 41 / var(--tw-bg-opacity))] pt-32 flex justify-center'>
-					{(AllBlogs?.data?.length == 0 && !AllBlogs.isError) ? (
-						<h1 className='text-center text-white text-3xl font-bold'>No Blogs Available Currently</h1>
+					{(AllBlogs?.data?.results?.length === 0 && Blogs.length===0 && !AllBlogs.isError && !AllBlogs.isLoading) ? (
+						<h1 className='text-center text-white text-3xl font-bold z-[1000]'>No Blogs Available Currently</h1>
 					) : (
 						null
 					)}
