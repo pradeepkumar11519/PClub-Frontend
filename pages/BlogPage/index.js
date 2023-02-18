@@ -32,9 +32,7 @@ export default function BlogPage() {
 
 		})
 	}
-	if(AllBlogs.isLoading && !AllBlogs.isError){
-		
-	}
+	
 	return (
 		<div className={`bg-[url('/images/addblog5.png')] ${invert} w-full pt-32 ${((user || authtoken || AllBlogs?.data?.length!==0 || Blogs.length!==0) && !AllBlogs.isLoading && !AllBlogs.isError) ? "h-full" : "h-screen"} h-screen z-[100] `}>
 
@@ -48,11 +46,7 @@ export default function BlogPage() {
 
 
 				<div id="blogpage" className='bg-[rgb(31 32 41 / var(--tw-bg-opacity))] pt-32 flex justify-center'>
-					{(AllBlogs?.data?.results?.length === 0 && !AllBlogs.isError && !AllBlogs.isLoading) ? (
-						<h1 className='text-center text-white text-3xl font-bold'>No Blogs Available Currently</h1>
-					) : (
-						null
-					)}
+					
 					{(AllBlogs.isError) ? (
 						<h1 className='text-center h-full text-white text-3xl font-bold'>{AllBlogs?.error?.message}</h1>
 					) : (
@@ -63,8 +57,12 @@ export default function BlogPage() {
 					) : (
 						null
 					)}
-					
-					{(AllBlogs?.data?.length !== 0 && !AllBlogs.isLoading && !AllBlogs.isError) ? (
+					{(AllBlogs?.data?.results?.length == 0 && Blogs.length==0 && !AllBlogs.isError && !AllBlogs.isLoading && Blogs.length===0) ? (
+						<h1 className='text-center text-white text-3xl font-bold'>No Blogs Available Currently</h1>
+					) : (
+						null
+					)}
+					{(AllBlogs?.data?.results?.length !== 0 && !AllBlogs.isLoading && !AllBlogs.isError) ? (
 						
 							<InfiniteScroll
 									dataLength={Blogs.length} //This is important field to render the next data
