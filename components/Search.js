@@ -6,7 +6,8 @@ import { useContext } from 'react'
 import { useState } from 'react'
 import { FaSearch, FaBars } from 'react-icons/fa'
 export default function Search({className1,className2,className3,className4,inputClass}) {
-    const [searchquery,setsearchquery] = useState(null)
+    const [searchquery,setsearchquery] = useState("")
+    console.log(searchquery);
     const router = useRouter()
     const {openoffcanvas,invert} = useContext(Context)
     return (
@@ -16,12 +17,12 @@ export default function Search({className1,className2,className3,className4,inpu
                     <input type="text" className={inputClass} onChange={(e)=>{
                         setsearchquery(e.target.value)
                     }} />
-                    <button disabled={searchquery!==null?false:true} className={className3}><FaSearch  className={className4} onClick={(e)=>{
-            if(searchquery!==null){
+                    <button disabled={searchquery.length===0} className={className3}><FaSearch  className={className4} onClick={(e)=>{
+            if(searchquery.length!==0){
                 router.push(`/BlogPage/Search/${searchquery}`)
-            const queryClient = new QueryClient()
-            queryClient.invalidateQueries(['SearchedBlogs'])
-            openoffcanvas()
+                const queryClient = new QueryClient()
+                queryClient.invalidateQueries(['SearchedBlogs'])
+                openoffcanvas()
             }
                 
             
