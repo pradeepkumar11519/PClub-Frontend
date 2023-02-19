@@ -4,6 +4,7 @@ import TextArea from '@/components/TextArea';
 import UpdateBlog from '@/components/UpdateBlog';
 import Context from '@/context/Context';
 import { useQuery, QueryClient, dehydrate, useQueryClient, useMutation } from '@tanstack/react-query';
+import parse from 'html-react-parser';
 import axios from 'axios';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import { Form, Formik } from 'formik';
@@ -144,7 +145,7 @@ export default function BlogID({ cookies }) {
 									
 								</div>
 							</div>
-							<p className="mb-8 leading-relaxed text-gray-300 font-bold text-xl break-all">{EachBlog?.data?.desc}</p>
+							<p className="mb-8 leading-relaxed text-gray-300 font-bold text-xl break-all"><div id="desc">{parse(EachBlog?.data?.desc)}</div></p>
 
 						</div>
 					</div>
@@ -197,6 +198,11 @@ export default function BlogID({ cookies }) {
 				</div>
 
 			</Modal>
+			<style jsx>
+				{`
+					
+				`}
+			</style>
 		</div>
 	)
 }

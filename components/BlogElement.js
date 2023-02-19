@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import blog1 from '../public/images/blog1.webp'
 import Image from 'next/image';
 import Link from 'next/link';
+import parse from 'html-react-parser';
 import { useContext } from 'react';
 import Context from '@/context/Context';
 export default function BlogElement({ blog }) {
@@ -47,12 +48,12 @@ export default function BlogElement({ blog }) {
 						<Link href={`/BlogPage/${blog.id}`} scroll={true}>
 							<div className="flex-item text-center text-black font-bold text-xl !p-0" >
 								<div className='absolute w-fit p-2 h-fit font-bol text-white bg-red-500 text-xs font-thin translate-y-[-10px] translate-x-[-50px] !md:translate-y-[-38px] rounded-md'>By {blog?.user}</div>
-								<div id="title" className='pt-5'>{blog?.title}</div>
+								<div id="title" className='pt-5 break-all'>{blog?.title}</div>
 								<div id="img" className={`my-3  rounded-md flex justify-center`}>
 									<img src={blog?.image} className={`rounded-md w-[400px] ${invert} h-[200px] `} />
 								</div>
 								<div className='my-3 text-sm font-thin'>
-									{blog?.desc.slice(0, 500)}
+									{parse(blog?.desc.slice(0, 500))}
 								</div>
 								<div id="time-date" className='grid grid-cols-2 border-t-2 pt-4 border-black text-xs font-thin'>
 									<div className='border-r-2 border-black mb-5 text-xs font-thin'>{blog?.datestamp}</div>
