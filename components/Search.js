@@ -7,7 +7,6 @@ import { useState } from 'react'
 import { FaSearch, FaBars } from 'react-icons/fa'
 export default function Search({className1,className2,className3,className4,inputClass}) {
     const [searchquery,setsearchquery] = useState("")
-    console.log(searchquery);
     const router = useRouter()
     const {openoffcanvas,invert} = useContext(Context)
     return (
